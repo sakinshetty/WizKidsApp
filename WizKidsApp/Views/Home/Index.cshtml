@@ -1,0 +1,77 @@
+﻿@inject IConfiguration Configuration
+<html>
+<body>  
+    <div id="parent">
+        <div>
+            <label>Search Word :  </label>
+            <input id="edValue" type="text" onKeyUp="edValueKeyPress()">
+        </div>
+        <div class="child">
+            <ul> Custom Dictoniary
+                <li  id="lvCustomDict" list-style-type="none"> </li>
+            </ul>
+        </div>
+        <div class="child">
+            <ul> Word Prediction Service
+                <li id="lvWordService"> </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+    function edValueKeyPress() {
+        const apiUrl = @Json.Serialize(@Configuration.GetSection("API").GetSection("WordPredictionApi").Value);      
+        var url1 = apiUrl + $("#edValue").val();
+        try {
+            $.ajax({
+                url: url1,               
+                type: "GET",
+                dataType: "json",
+                success: function (data) {                   
+                    $('#lvWordService').empty();
+                    $('#lvCustomDict').empty();
+                    if (data.valuePredictionService.length > 0) {
+                        $.each(data.valuePredictionService, function (idex, value) {
+                            $('#lvWordService').append('<li id=' + idex + '>' + value + '</li>');
+                        })
+                    }
+                    if (data.valueCustomDictionary.length > 0) {
+                        $.each(data.valueCustomDictionary, function (idx, obj) {
+                            $('#lvCustomDict').append('<li id="' + idx + '">' + obj.value + '</li>');
+                        })
+                    }
+                },
+                error: function (data) {
+                    $('#lvWordService').empty();
+                    $('#lvCustomDict').empty();
+                    console.log("Error");
+                    console.log(data);
+                }
+            });
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }        
+</script>
+
+<style>
+
+    li {
+        list-style-type: none;
+    }
+
+
+    .child {
+        width: 49%;
+        vertical-align: top;
+        display: inline-block;
+    }
+</style>
+
+
+

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizKidsApp", "WizKidsApp\WizKidsApp.csproj", "{9C49DD3C-7386-4985-886A-D2EFC7F4E0A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizKidAPI", "WizKidAPI\WizKidAPI.csproj", "{33DCB8E6-B03B-4CEC-A2CB-7D847538341F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C49DD3C-7386-4985-886A-D2EFC7F4E0A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C49DD3C-7386-4985-886A-D2EFC7F4E0A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C49DD3C-7386-4985-886A-D2EFC7F4E0A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C49DD3C-7386-4985-886A-D2EFC7F4E0A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33DCB8E6-B03B-4CEC-A2CB-7D847538341F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DCB8E6-B03B-4CEC-A2CB-7D847538341F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DCB8E6-B03B-4CEC-A2CB-7D847538341F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DCB8E6-B03B-4CEC-A2CB-7D847538341F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B096239A-F9D1-4200-8D62-072E1C238E8E}
+	EndGlobalSection
+EndGlobal
